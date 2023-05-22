@@ -2,15 +2,24 @@
   <div id="nav">
     <router-link to="/">Início</router-link> -
     <router-link to="/basket">Carrinho (0)</router-link> 
+   
   </div>
   <router-view/>
 </template>
 
 <script>
 
-  export default {
 
-  }
+
+
+  export default {
+    created(){
+      this.$store.dispatch('loadProducts');
+    }
+
+    
+    }
+  
   
 </script>
 
