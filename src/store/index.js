@@ -33,8 +33,11 @@ export default createStore({
     commit('addToBag',product);
   },
   removeFromBag({commit},productId){
+    if(confirm('Você realmente quer retirar o produto?')){
+      commit('removeFromBag',productId);
+    }
 
-    commit('removeFromBag',productId);
+   
 },
   },
   modules: {
